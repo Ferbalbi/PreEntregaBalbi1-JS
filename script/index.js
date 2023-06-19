@@ -71,7 +71,19 @@ function manejoDivisa() {
       break;
     case "euro":
       const monto = seleccionMonto(Number(prompt("Escribe el monto")));
-      alert("El valor a peso es de: " + monto * 273);
+      const montoEuro = monto * 273;
+      const montoAPagarEuro = prompt(
+        "El total es de: " +
+          montoEuro +
+          ". Cantidad de cuotas disponibles: " +
+          cuotas(6) +
+          " elige la cuota:"
+      );
+      alert(
+        "El valor de la primer cuota es de: " +
+          montoEuro / Number(montoAPagarEuro)
+      );
+      break;
     default:
       alert("Selecciona una de las dos opciones");
   }
